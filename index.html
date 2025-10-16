@@ -21,10 +21,10 @@
                 <span class="error-message" id="name-error"></span>
             </div>
 
-            <!-- 소속 기관/부서 -->
+            <!-- 소속 의회 -->
             <div class="form-group">
-                <label for="organization">소속 기관/부서 <span class="required">*</span></label>
-                <input type="text" id="organization" name="organization" required placeholder="예: 교육부 정책기획과">
+                <label for="organization">소속 의회 <span class="required">*</span></label>
+                <input type="text" id="organization" name="organization" required placeholder="예: 서울특별시의회">
                 <span class="error-message" id="organization-error"></span>
             </div>
 
@@ -42,16 +42,22 @@
                 <span class="error-message" id="email-error"></span>
             </div>
 
-            <!-- 직급/직책 -->
+            <!-- 급수 -->
             <div class="form-group">
-                <label for="position">직급/직책</label>
-                <input type="text" id="position" name="position" placeholder="예: 사무관">
+                <label for="position">급수</label>
+                <input type="text" id="position" name="position" placeholder="예: 7급, 6급">
             </div>
 
-            <!-- 담당 업무 분야 -->
+            <!-- 담당 의원 이름 -->
             <div class="form-group">
-                <label for="workArea">담당 업무 분야</label>
-                <input type="text" id="workArea" name="workArea" placeholder="예: 교육정책, 복지정책 등">
+                <label for="workArea">담당 의원 이름 (2명 모두 작성)</label>
+                <input type="text" id="workArea" name="workArea" placeholder="예: 홍길동, 김철수">
+            </div>
+
+            <!-- 담당 상임위 -->
+            <div class="form-group">
+                <label for="committee">담당 상임위</label>
+                <input type="text" id="committee" name="committee" placeholder="예: 교육위원회">
             </div>
 
             <!-- 참여 목적 -->

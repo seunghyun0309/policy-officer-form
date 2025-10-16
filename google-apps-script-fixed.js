@@ -62,11 +62,12 @@ function saveToSheet(data) {
     var headers = [
       '제출일시',
       '이름',
-      '소속 기관/부서',
+      '소속 의회',
       '연락처',
       '이메일',
-      '직급/직책',
-      '담당 업무 분야',
+      '급수',
+      '담당 의원 이름',
+      '담당 상임위',
       '참여 목적'
     ];
 
@@ -89,6 +90,7 @@ function saveToSheet(data) {
     data.email || '',
     data.position || '',
     data.workArea || '',
+    data.committee || '',
     data.purpose || ''
   ];
 
@@ -112,11 +114,12 @@ function sendEmailNotification(data) {
     '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n' +
     '📋 가입자 정보\n\n' +
     '• 이름: ' + (data.name || '-') + '\n' +
-    '• 소속: ' + (data.organization || '-') + '\n' +
+    '• 소속 의회: ' + (data.organization || '-') + '\n' +
     '• 연락처: ' + (data.phone || '-') + '\n' +
     '• 이메일: ' + (data.email || '-') + '\n' +
-    '• 직급/직책: ' + (data.position || '-') + '\n' +
-    '• 담당 업무: ' + (data.workArea || '-') + '\n' +
+    '• 급수: ' + (data.position || '-') + '\n' +
+    '• 담당 의원 이름: ' + (data.workArea || '-') + '\n' +
+    '• 담당 상임위: ' + (data.committee || '-') + '\n' +
     '• 참여 목적: ' + (data.purpose || '-') + '\n\n' +
     '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n' +
     '⏰ 제출 시간: ' + new Date(data.timestamp).toLocaleString('ko-KR') + '\n\n' +
@@ -136,17 +139,19 @@ function sendEmailNotification(data) {
     '<table style="width: 100%; border-collapse: collapse; margin: 20px 0;">' +
     '<tr style="background: #F8F9FA;"><td style="padding: 12px; border: 1px solid #E0E0E0; font-weight: bold; width: 150px;">이름</td>' +
     '<td style="padding: 12px; border: 1px solid #E0E0E0;">' + (data.name || '-') + '</td></tr>' +
-    '<tr><td style="padding: 12px; border: 1px solid #E0E0E0; font-weight: bold;">소속 기관/부서</td>' +
+    '<tr><td style="padding: 12px; border: 1px solid #E0E0E0; font-weight: bold;">소속 의회</td>' +
     '<td style="padding: 12px; border: 1px solid #E0E0E0;">' + (data.organization || '-') + '</td></tr>' +
     '<tr style="background: #F8F9FA;"><td style="padding: 12px; border: 1px solid #E0E0E0; font-weight: bold;">연락처</td>' +
     '<td style="padding: 12px; border: 1px solid #E0E0E0;">' + (data.phone || '-') + '</td></tr>' +
     '<tr><td style="padding: 12px; border: 1px solid #E0E0E0; font-weight: bold;">이메일</td>' +
     '<td style="padding: 12px; border: 1px solid #E0E0E0;">' + (data.email || '-') + '</td></tr>' +
-    '<tr style="background: #F8F9FA;"><td style="padding: 12px; border: 1px solid #E0E0E0; font-weight: bold;">직급/직책</td>' +
+    '<tr style="background: #F8F9FA;"><td style="padding: 12px; border: 1px solid #E0E0E0; font-weight: bold;">급수</td>' +
     '<td style="padding: 12px; border: 1px solid #E0E0E0;">' + (data.position || '-') + '</td></tr>' +
-    '<tr><td style="padding: 12px; border: 1px solid #E0E0E0; font-weight: bold;">담당 업무</td>' +
+    '<tr><td style="padding: 12px; border: 1px solid #E0E0E0; font-weight: bold;">담당 의원 이름</td>' +
     '<td style="padding: 12px; border: 1px solid #E0E0E0;">' + (data.workArea || '-') + '</td></tr>' +
-    '<tr style="background: #F8F9FA;"><td style="padding: 12px; border: 1px solid #E0E0E0; font-weight: bold;">참여 목적</td>' +
+    '<tr style="background: #F8F9FA;"><td style="padding: 12px; border: 1px solid #E0E0E0; font-weight: bold;">담당 상임위</td>' +
+    '<td style="padding: 12px; border: 1px solid #E0E0E0;">' + (data.committee || '-') + '</td></tr>' +
+    '<tr><td style="padding: 12px; border: 1px solid #E0E0E0; font-weight: bold;">참여 목적</td>' +
     '<td style="padding: 12px; border: 1px solid #E0E0E0;">' + (data.purpose || '-') + '</td></tr>' +
     '</table>' +
     '<p style="color: #666; font-size: 14px; margin: 20px 0;">⏰ 제출 시간: ' + new Date(data.timestamp).toLocaleString('ko-KR') + '</p>' +

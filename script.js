@@ -34,6 +34,7 @@ form.addEventListener('submit', async function(e) {
         email: document.getElementById('email').value,
         position: document.getElementById('position').value,
         workArea: document.getElementById('workArea').value,
+        committee: document.getElementById('committee').value,
         purpose: document.getElementById('purpose').value,
         timestamp: new Date().toISOString()
     };
@@ -82,7 +83,7 @@ function validateForm() {
     // 소속 검증
     const organization = document.getElementById('organization').value.trim();
     if (organization.length < 2) {
-        showError('organization', '소속 기관/부서를 입력해주세요');
+        showError('organization', '소속 의회를 입력해주세요');
         isValid = false;
     } else {
         clearError('organization');
