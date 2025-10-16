@@ -1,25 +1,4 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "api/**/*.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
-    }
-  ],
-  "env": {
-    "SUPABASE_URL": "@supabase_url",
-    "SUPABASE_ANON_KEY": "@supabase_anon_key",
-    "RESEND_API_KEY": "@resend_api_key",
-    "ADMIN_EMAILS": "@admin_emails",
-    "EMAIL_FROM": "@email_from",
-    "KAKAO_CHAT_LINK": "@kakao_chat_link"
-  },
   "headers": [
     {
       "source": "/api/(.*)",
