@@ -1,0 +1,25 @@
+{
+  "name": "policy-officer-form",
+  "version": "1.0.0",
+  "description": "정책지원관 오픈채팅방 자동 초대 시스템",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'No build step required'",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0"
+  },
+  "devDependencies": {
+    "vercel": "^33.0.0"
+  },
+  "keywords": [
+    "form",
+    "supabase",
+    "vercel",
+    "kakao"
+  ],
+  "author": "",
+  "license": "MIT"
+}

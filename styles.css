@@ -1,0 +1,299 @@
+/* 기본 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    background: linear-gradient(135deg, #FEE500 0%, #FFD700 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    padding: 40px;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 헤더 */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    color: #3C1E1E;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* 폼 스타일 */
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.required {
+    color: #FF6B6B;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+select {
+    padding: 12px 16px;
+    border: 2px solid #E0E0E0;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+select:focus {
+    outline: none;
+    border-color: #FEE500;
+    box-shadow: 0 0 0 3px rgba(254, 229, 0, 0.1);
+}
+
+input.error {
+    border-color: #FF6B6B;
+}
+
+.error-message {
+    color: #FF6B6B;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+
+/* 체크박스 그룹 */
+.checkbox-group {
+    background: #F8F9FA;
+    padding: 16px;
+    border-radius: 8px;
+    border: 2px solid #E0E0E0;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-right: 10px;
+    margin-top: 2px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.privacy-notice {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #E0E0E0;
+}
+
+.privacy-notice p {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
+
+.privacy-notice strong {
+    color: #333;
+}
+
+/* 제출 버튼 */
+.submit-btn {
+    background: #3C1E1E;
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background: #2A1515;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(60, 30, 30, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* 성공 메시지 */
+.success-message {
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background: #4CAF50;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    margin: 0 auto 20px;
+    animation: checkmark 0.6s ease-out;
+}
+
+@keyframes checkmark {
+    0% {
+        transform: scale(0) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(180deg);
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+.success-message h2 {
+    color: #3C1E1E;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+#countdownText {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.chat-link {
+    display: inline-block;
+    background: #FEE500;
+    color: #3C1E1E;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.chat-link:hover {
+    background: #FFD700;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(254, 229, 0, 0.4);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .container {
+        padding: 24px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    select {
+        font-size: 16px; /* iOS 자동 줌 방지 */
+    }
+
+    .submit-btn {
+        font-size: 15px;
+        padding: 14px;
+    }
+
+    .success-message h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .success-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 36px;
+    }
+}

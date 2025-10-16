@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정책지원관 오픈채팅방 가입</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>정책지원관 오픈채팅방 가입</h1>
+            <p class="subtitle">아래 정보를 입력하시면 오픈채팅방으로 자동 초대됩니다</p>
+        </div>
+
+        <form id="registrationForm" class="registration-form">
+            <!-- 이름 -->
+            <div class="form-group">
+                <label for="name">이름 <span class="required">*</span></label>
+                <input type="text" id="name" name="name" required placeholder="홍길동">
+                <span class="error-message" id="name-error"></span>
+            </div>
+
+            <!-- 소속 기관/부서 -->
+            <div class="form-group">
+                <label for="organization">소속 기관/부서 <span class="required">*</span></label>
+                <input type="text" id="organization" name="organization" required placeholder="예: 교육부 정책기획과">
+                <span class="error-message" id="organization-error"></span>
+            </div>
+
+            <!-- 연락처 -->
+            <div class="form-group">
+                <label for="phone">연락처 <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" required placeholder="010-1234-5678">
+                <span class="error-message" id="phone-error"></span>
+            </div>
+
+            <!-- 이메일 -->
+            <div class="form-group">
+                <label for="email">이메일 <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="example@gov.kr">
+                <span class="error-message" id="email-error"></span>
+            </div>
+
+            <!-- 직급/직책 -->
+            <div class="form-group">
+                <label for="position">직급/직책</label>
+                <input type="text" id="position" name="position" placeholder="예: 사무관">
+            </div>
+
+            <!-- 담당 업무 분야 -->
+            <div class="form-group">
+                <label for="workArea">담당 업무 분야</label>
+                <input type="text" id="workArea" name="workArea" placeholder="예: 교육정책, 복지정책 등">
+            </div>
+
+            <!-- 참여 목적 -->
+            <div class="form-group">
+                <label for="purpose">참여 목적</label>
+                <select id="purpose" name="purpose">
+                    <option value="">선택해주세요</option>
+                    <option value="정보공유">정보 공유</option>
+                    <option value="네트워킹">네트워킹</option>
+                    <option value="협업">협업</option>
+                    <option value="정책연구">정책 연구</option>
+                    <option value="기타">기타</option>
+                </select>
+            </div>
+
+            <!-- 개인정보 수집·이용 동의 -->
+            <div class="form-group checkbox-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="privacy" name="privacy" required>
+                    <span>개인정보 수집·이용에 동의합니다 <span class="required">*</span></span>
+                </label>
+                <div class="privacy-notice">
+                    <p><strong>수집 항목:</strong> 이름, 소속, 연락처, 이메일, 직급, 담당업무, 참여목적</p>
+                    <p><strong>이용 목적:</strong> 오픈채팅방 관리, 정책지원관 네트워크 운영</p>
+                    <p><strong>보유 기간:</strong> 목적 달성 시까지 (탈퇴 시 즉시 삭제)</p>
+                </div>
+            </div>
+
+            <!-- 제출 버튼 -->
+            <button type="submit" class="submit-btn">가입하고 오픈채팅방 입장하기</button>
+        </form>
+
+        <!-- 제출 완료 메시지 (초기에는 숨김) -->
+        <div id="successMessage" class="success-message" style="display: none;">
+            <div class="success-icon">✓</div>
+            <h2>가입이 완료되었습니다!</h2>
+            <p id="countdownText">3초 후 오픈채팅방으로 이동합니다...</p>
+            <a href="#" id="chatLink" class="chat-link">바로 이동하기</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
